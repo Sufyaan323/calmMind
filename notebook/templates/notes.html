@@ -1,0 +1,39 @@
+{% extends "default.html" %}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'css/notes.css' %}">
+{% endblock link %}
+
+{% block title %}Notes{% endblock title %}
+
+{% block heading %}Notes{% endblock heading %}
+
+{% block content %}
+    <div class="newEntry">
+        <i class="addButton bi bi-plus-square-dotted"></i>
+    </div>
+    <div class="addEntry hidden">
+        <form action="" method="POST"> {% csrf_token %}
+            <button type="submit" class="deleteEntry bi bi-trash" name="deleteButton"></button>
+            <button type="reset" class="exitNewEntry">
+                <i class="close bi bi-x-circle-fill"></i>
+            </button>
+            <input type="hidden" class="noteId" name="noteId">
+            <input type="text" class="noteTitle" placeholder="Title" name="noteName"/>
+            <textarea class="noteText" placeholder="Note..." name="noteText"></textarea>
+            <button type="submit" class="close submitButton">Save</button>
+        </form>
+    </div>
+
+    <div class="noteCards">
+        {% for note in noteData %}
+            <button onclick="edit({{note.noteId}}, '{{note.noteTitle}}', '{{note.noteText}}')" type="button" class="card">{{note.noteTitle}}</button>
+        {% endfor %}
+    </div>
+
+{% endblock content %}
+
+{% block script %}
+    <script src="{% static 'javascript/notes.js' %}"></script>
+{% endblock script %}
