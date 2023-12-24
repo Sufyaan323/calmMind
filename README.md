@@ -42,7 +42,7 @@ CalmMind is a note taking app that allows for users with their own independant d
    ```
 4. Start the server
    ```sh
-   python manage.py startserver
+   python manage.py runserver
    ```
 
 
@@ -50,7 +50,7 @@ CalmMind is a note taking app that allows for users with their own independant d
 
 A superuser should be created using the following command:
 ```sh
-python manage.py create superuser
+python manage.py createsuperuser
 ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
