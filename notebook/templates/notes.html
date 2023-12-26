@@ -11,7 +11,7 @@
 
 {% block content %}
     <div class="newEntry">
-        <i class="addButtonIdentifier addButton bi bi-plus-square-dotted"></i>
+        <i class="addButton bi bi-plus-square-dotted"></i>
     </div>
     <div class="addEntry hidden">
         <form action="" method="POST"> {% csrf_token %}
@@ -20,6 +20,7 @@
                 <i class="close bi bi-x-circle-fill"></i>
             </button>
             <input type="hidden" class="noteId" name="noteId">
+            <input type="hidden" class="noteAuthor" name="noteAuthor" value="{{user.id}}">
             <input type="text" class="noteTitle" placeholder="Title" name="noteName"/>
             <textarea class="noteText" placeholder="Note..." name="noteText"></textarea>
             <button type="submit" class="close submitButton">Save</button>
@@ -28,7 +29,9 @@
 
     <div class="noteCards">
         {% for note in noteData %}
-            <button onclick="edit({{note.noteId}}, '{{note.noteTitle}}', '{{note.noteText}}')" type="button" class="card">{{note.noteTitle}}</button>
+            {% if user.id == note.noteAuthor.id %}
+                <button onclick="edit({{note.noteId}}, '{{note.noteTitle}}', '{{note.noteText}}')" type="button" class="card">{{note.noteTitle}}</button>
+            {% endif %}
         {% endfor %}
     </div>
 

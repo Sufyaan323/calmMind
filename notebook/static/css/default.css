@@ -28,8 +28,12 @@ body{
     color: #6a00ff
 }
 
+.nav:hover > .nav-item span{
+    color: #2d08ff;
+}
+
 h1{
-    color: rgba(52, 0, 141, 0.721);
+    color: #34008D;
     text-align: center;
     font-size: 5vw;
 }
