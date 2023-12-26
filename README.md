@@ -35,9 +35,6 @@ CalmMind is a note taking app that allows for users with their own independant d
    ```
 3. Perform migration to generate database tables
    ```sh
-   python manage.py makemigrations
-   ```
-   ```sh
    python manage.py migrate
    ```
 4. Start the server
