@@ -6,7 +6,6 @@ body{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    
 }
 
 #container{
@@ -15,21 +14,34 @@ body{
     position: relative;
 }
 
+#sidebar{
+    padding: 30px;
+    background-color: #000000;
+    color: #6005ff;
+    text-align: center;
+}
+#sidebar a{
+    text-decoration: none;
+}
+
+#sidebar hr{
+    color: #cac9c9;
+}
+
+#navLinks{
+    font-size: 25px;
+}
+
+#user{
+    text-align: left;
+}
+
 #projectName{
     color: #ffffff
 }
 
-.navIcon
-{
-    color: #ffffff;
-}
-
-.container-fluid span{
-    color: #6a00ff
-}
-
-.nav:hover > .nav-item span{
-    color: #2d08ff;
+#content{
+    min-height: 100vh;
 }
 
 h1{
