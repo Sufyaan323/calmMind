@@ -30,7 +30,7 @@
     <div class="noteCards">
         {% for note in noteData %}
             {% if user.id == note.noteAuthor.id %}
-                <button onclick="edit({{note.noteId}}, '{{note.noteTitle}}', '{{note.noteText}}')" type="button" class="card">{{note.noteTitle}}</button>
+                <button onclick="edit({{note.noteId}}, '{{note.noteTitle}}', '{{note.noteText|escapejs|linebreaksbr}}')" type="button" class="card">{{note.noteTitle}}</button>
             {% endif %}
         {% endfor %}
     </div>
